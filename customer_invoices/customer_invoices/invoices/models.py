@@ -76,4 +76,4 @@ class Invoice(models.Model):
 
     def __str__(self):
         """Unicode representation of Invoice."""
-        return self.customer
+        return self.customer.first_name

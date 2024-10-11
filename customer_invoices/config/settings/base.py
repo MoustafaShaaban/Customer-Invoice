@@ -88,6 +88,7 @@ THIRD_PARTY_APPS = [
     "corsheaders",
     "drf_spectacular",
     "neapolitan",
+    "calculation",
 ]
 
 LOCAL_APPS = [

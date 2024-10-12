@@ -1,10 +1,19 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, UpdateView, DeleteView, ListView, DetailView
 
 from neapolitan.views import CRUDView
 
 from customer_invoices.invoices.models import Customer, Item, Invoice
 from customer_invoices.invoices.forms import InvoiceForm
+
+
+class CreateInvoiceView(CreateView):
+    model = Invoice
+    form_class = InvoiceForm
+    template_name = 'invoices/create_invoice.html'
+    success_url = reverse_lazy('/')
 
 
 def create_invoice(request):

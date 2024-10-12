@@ -9,9 +9,15 @@ from customer_invoices.invoices.models import Invoice, Item
 
 
 class InvoiceForm(forms.ModelForm):
+
+
+
     class Meta:
         model = Invoice
         fields = "__all__"
+        # labels = {
+        #     "customer": "Customer First Name",
+        # }
         widgets = {
             'date': forms.widgets.DateInput(attrs={'type': 'date'}),
             'expiry_date': forms.widgets.DateInput(attrs={'type': 'date'}),
